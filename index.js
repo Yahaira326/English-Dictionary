@@ -6,6 +6,7 @@ const meaningEl = document.getElementById("meaning");
 const audioEl = document.getElementById("audio");
 
 async function fetchAPI(word) {
+  
   try {
     infoTextEl.style.display = "block";
     meaningContainerEl.style.display = "none";
@@ -20,6 +21,7 @@ async function fetchAPI(word) {
       meaningEl.innerText = "N/A";
       audioEl.style.display = "none";
     } else {
+      
       infoTextEl.style.display = "none";
       meaningContainerEl.style.display = "block";
       audioEl.style.display = "inline-flex";
@@ -28,6 +30,7 @@ async function fetchAPI(word) {
       audioEl.src = result[0].phonetics[0].audio;
     }
   } catch (error) {
+    
     console.log(error);
     infoTextEl.innerText = `an error happened, try again later`;
   }
